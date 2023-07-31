@@ -1,17 +1,5 @@
 from pynput import keyboard
-from window import MyWindow
-from PyQt6.QtWidgets import QApplication
-import sys
-import threading
-
-
-def runApp():
-    app = QApplication(sys.argv)
-    window = MyWindow()
-    print("One is running")
-    window.load_buttons()
-    window.show_window()
-    app.exec()
+from window import runApp
 
 
 def on_press(key):
@@ -20,9 +8,7 @@ def on_press(key):
         try:
             if key.char == "/":
                 print('"/" key is pressed.')
-
                 runApp()
-
         except AttributeError:
             pass
     except AttributeError:
